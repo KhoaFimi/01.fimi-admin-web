@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+/postgres_db
+/
 
 # production
 /build
