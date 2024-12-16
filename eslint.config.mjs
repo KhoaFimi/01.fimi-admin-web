@@ -3,9 +3,10 @@ import js from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import importPlugin from 'eslint-plugin-import'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
+import eslintQueryPlugin from '@tanstack/eslint-plugin-query'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -18,6 +19,7 @@ const eslintConfig = [
 	js.configs.recommended,
 	eslintPluginPrettierRecommended,
 	eslintConfigPrettier,
+	...eslintQueryPlugin.configs['flat/recommended'],
 	...compat.extends('next/core-web-vitals', 'next/typescript'),
 	{
 		plugins: {
