@@ -17,7 +17,6 @@
 /.next/
 /out/
 /postgres_db
-/
 
 # production
 /build
